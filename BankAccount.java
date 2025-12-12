@@ -1,5 +1,5 @@
 import java.util.Scanner;
-class BankAccount{
+abstract class BankAccount{
     protected String name;
     protected double balance;
     
@@ -21,7 +21,7 @@ class BankAccount{
     public void withdrow(double amount){
         if(balance>(amount+50)){
             balance-=amount;
-            System.out.println("Money withdrew!");
+            System.out.println("Money withdrew!"+ balance);
         }else{
             System.out.println("Account Balance IS LOW!");
         }
@@ -33,4 +33,7 @@ class BankAccount{
         }
         return -1;
     }
+
+
+    public abstract void applyMonthlyProcess();
 }
